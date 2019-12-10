@@ -1,0 +1,19 @@
+syntax="proto3";
+package protoc;
+message MsgToServer{
+    string ipstring=1;
+    string prostring=2;
+    ServerFlag flag=3;
+}
+enum ServerFlag{
+    REGISTER=0;
+    GETWORKER=1;
+    REGETWORKER=2;
+}
+
+
+message MsgToClient{
+    string ipstring=1;
+    string prostring=2;
+}
+

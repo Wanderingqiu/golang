@@ -1,0 +1,40 @@
+syntax="proto3";
+package protoc;
+message ComData{
+    string firstnum=1;
+    string secondnum=2;
+    DataFlag flag=3;
+    Opr   opr=4;
+}
+enum DataFlag{
+    DATAINT32=0;
+    DATAINT64=1;
+    DATAFLOAT=2;
+}
+enum Opr {
+    ADD=0;
+    SUB=1;
+    MUL=2;
+    DIV=3;
+}
+
+message ComRes{
+    string res=1;
+    ResFlag flag=2;
+}
+enum ResFlag{
+    FALSE=0;
+    RESINT32=1;
+    RESINT64=2;
+    RESFLOAT=3;
+}
+message MsgToServer{
+    string ipstring=1;
+    string prostring=2;
+    ServerFlag flag=3;
+}
+enum ServerFlag{
+    REGISTER=0;
+    GETWORKER=1;
+    REGETWORKER=2;
+}
